@@ -1,0 +1,24 @@
+.investor-page { min-height: 100svh; position: relative; overflow: hidden; background: #f7fbff; color: #17304f; display: flex; flex-direction: column; }
+.investor-page::before { content: ''; position: absolute; width: 580px; height: 580px; top: -300px; right: -145px; border-radius: 50%; background: #dceeff; pointer-events: none; }
+.investor-topbar, .investor-content, .investor-page .footer { position: relative; z-index: 1; width: min(100% - 64px, 1056px); margin-inline: auto; }
+.investor-topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 30px 0; }
+.investor-topbar .brand { justify-self: center; }
+.investor-topbar .secure-status { justify-self: end; }
+.back-button { justify-self: start; padding: 0; border: 0; color: #7090af; background: transparent; cursor: pointer; font-size: 12px; }
+.back-button:hover { color: #0b75d1; }
+.investor-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 430px); align-items: center; gap: clamp(50px, 9vw, 150px); flex: 1; padding: clamp(45px, 8vh, 90px) 0 50px; }
+.investor-intro h1 { margin-bottom: 22px; }
+.investor-intro > p { max-width: 355px; color: #7690aa; font-size: 16px; line-height: 1.65; }
+.investor-form { padding: 31px; border: 1px solid #deebf5; border-radius: 16px; background: rgba(255, 255, 255, .88); box-shadow: 0 20px 50px rgba(30, 91, 138, .1); }
+.form-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 27px; }
+.investor-form-icon { display: grid; place-items: center; width: 43px; height: 43px; color: white; border-radius: 12px; background: #123c69; font-size: 23px; }
+.form-heading h2 { margin: 5px 0 0; color: #102d50; font: 600 22px 'Space Grotesk', sans-serif; }
+.investor-form label { display: block; margin-top: 17px; color: #486783; font-size: 12px; font-weight: 600; }
+.investor-form input { display: block; width: 100%; margin-top: 8px; padding: 13px 14px; border: 1px solid #d4e3ef; border-radius: 7px; outline: 0; color: #17304f; background: #fbfdff; font-size: 13px; transition: border-color .2s, box-shadow .2s; }
+.investor-form input:focus { border-color: #35a1e4; box-shadow: 0 0 0 3px #e1f3ff; }
+.investor-form input::placeholder { color: #a9bac9; }
+.investor-submit { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 25px; padding: 15px 18px 15px 20px; border: 0; border-radius: 8px; background: #102d50; color: white; cursor: pointer; font: 600 13px 'DM Sans', sans-serif; transition: background .2s, transform .2s; }
+.investor-submit:hover { background: #0b75d1; transform: translateX(3px); }
+.investor-submit span { font-size: 20px; line-height: 12px; }
+.investor-success { margin: 13px 0 0; color: #24956e; font-size: 11px; }
+@media (max-width: 720px) { .investor-topbar, .investor-content, .investor-page .footer { width: min(100% - 40px, 1056px); } .investor-topbar { padding: 22px 0; grid-template-columns: 1fr auto; } .investor-topbar .brand { grid-column: 1; justify-self: start; } .investor-topbar .secure-status { grid-column: 2; grid-row: 1; } .investor-topbar .back-button { grid-row: 2; grid-column: 1 / -1; margin-top: 20px; } .investor-content { grid-template-columns: 1fr; gap: 32px; padding-top: 42px; } .investor-intro h1 { font-size: 48px; } .investor-form { padding: 24px; } }

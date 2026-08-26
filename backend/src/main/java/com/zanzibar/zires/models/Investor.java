@@ -1,7 +1,9 @@
 package com.zanzibar.zires.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name = "investors")
 public class Investor {
@@ -39,56 +41,28 @@ public class Investor {
         this.companyStatus = companyStatus;
     }
 
-    public Long getCompanyID() {
-        return companyID;
-    }
-
     public void setCompanyID(Long companyID) {
         this.companyID = companyID;
-    }
-
-    public User getUser() {
-        return user;
     }
 
     public void setUser(User user) {
         this.user = user;
     }
 
-    public String getCompanyName() {
-        return companyName;
-    }
-
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
-    public String getInvestmentSector() {
-        return investmentSector;
-    }
-
     public void setInvestmentSector(String investmentSector) {
         this.investmentSector = investmentSector;
     }
 
-    public String getWebsite() {
-        return website;
-    }
-
     public void setWebsite(String website) {
         this.website = website;
-    }
-
-    public String getCompanyStatus() {
-        return companyStatus;
     }
 
     public void setCompanyStatus(String companyStatus) {
