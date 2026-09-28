@@ -1,10 +1,10 @@
-package com.zanzibar.zires;
+package com.zanzibar.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ZiresApplicationTests {
+class BackendApplicationTests {
 
     @Test
     void contextLoads() {
