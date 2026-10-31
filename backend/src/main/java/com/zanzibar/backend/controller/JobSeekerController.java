@@ -12,25 +12,30 @@ import java.util.List;
 public class JobSeekerController {
 
     @Autowired
-    private JobSeekerServices jobSeekerServices;
+    private JobSeekerServices jobseekerservices;
 
     @PostMapping ("/create")
     public JobSeeker createJobSeeker(@RequestBody JobSeeker jobSeeker){
-        return jobSeekerServices.createJobSeeker(jobSeeker);
+        return jobseekerservices.createJobSeeker(jobSeeker);
     }
 
     @GetMapping("/all")
     public List<JobSeeker> getAllJobSeeker(){
-        return jobSeekerServices.getAllJobSeekers();
+        return jobseekerservices.getAllJobSeekers();
     }
 
     @GetMapping("/JobSeeker/{id}")
     public JobSeeker getJobSeekerById(@PathVariable int id){
-        return jobSeekerServices.getJobSeekerById(id);
+        return jobseekerservices.getJobSeekerById(id);
     }
 
     @PutMapping("update/{id}")
     public JobSeeker updateJobSeeker(@RequestBody JobSeeker jobSeeker, @PathVariable int id){
-        return jobSeekerServices.updateJobSeeker(id,jobSeeker)
+        return jobseekerservicess.updateJobSeeker(jobSeeker,id)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteJobSeeker(@PathVariable int id) {
+        jobseekerservices.deleteJobSeekerById(id);
     }
 }
