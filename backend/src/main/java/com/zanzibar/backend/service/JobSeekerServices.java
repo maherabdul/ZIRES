@@ -8,27 +8,31 @@ import java.util.List;
 
 public class JobSeekerServices {
     @Autowired
-    private JobSeekerRepository jobSeekerRepository;
+    private JobSeekerRepository jobseekerrepository;
 
     public JobSeeker findById(Integer id) {
-        return jobSeekerRepository.findById(id).get();
+        return jobseekerrepository.findById(id).orElse(null);
     }
 
    public  List<JobSeeker> getAllJobSeekers() {
-        return jobSeekerRepository.findAll();
+        return jobseekerrepository.findAll();
    }
 
    public JobSeeker createJobSeeker(JobSeeker jobSeeker) {
-        return jobSeekerRepository.save(JobSeeker);
+        return jobseekerrepository.save(JobSeeker);
    }
 
    public JobSeeker updateJobSeeker(Long id,JobSeeker jobSeeker) {
-        JobSeeker existingJobSeeker = jobSeekerRepository.findById(id).orElse(null);
+        JobSeeker existingJobSeeker = jobseekerrepository.findById(id).orElse(null);
         if (existingJobSeeker != null) {
             existingJobSeeker.setName(jobSeeker.getName());
-            return jobSeekerRepository.save(existingJobSeeker);
+            return jobseekerrepository.save(existingJobSeeker);
         }
         return null;
         }
+
+   public void deleteJobSeeker(Long id) {
+        jobseekerrepository.deleteById(id);
    }
 }
+

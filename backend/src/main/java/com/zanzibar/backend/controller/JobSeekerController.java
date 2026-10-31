@@ -31,7 +31,7 @@ public class JobSeekerController {
 
     @PutMapping("update/{id}")
     public JobSeeker updateJobSeeker(@RequestBody JobSeeker jobSeeker, @PathVariable int id){
-        return jobseekerservicess.updateJobSeeker(jobSeeker,id)
+        return jobseekerservices.updateJobSeeker(jobSeeker,id)
     }
 
     @DeleteMapping("/delete/{id}")
