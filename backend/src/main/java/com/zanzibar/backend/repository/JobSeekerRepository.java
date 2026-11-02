@@ -1,6 +1,11 @@
+
 package com.zanzibar.backend.repository;
 
+import com.zanzibar.backend.model.JobSeeker;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface JobSeekerRepository extends JpaRepository<JobSeeker, Integer> {
+@Repository
+public interface JobSeekerRepository extends JpaRepository<JobSeeker, Long> {
+
 }

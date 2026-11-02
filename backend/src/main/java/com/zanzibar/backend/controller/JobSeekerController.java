@@ -1,3 +1,4 @@
+
 package com.zanzibar.backend.controller;
 
 import com.zanzibar.backend.model.JobSeeker;
@@ -12,30 +13,45 @@ import java.util.List;
 public class JobSeekerController {
 
     @Autowired
-    private JobSeekerServices jobseekerservices;
+    private JobSeekerServices jobSeekerServices;
 
-    @PostMapping ("/create")
-    public JobSeeker createJobSeeker(@RequestBody JobSeeker jobSeeker){
-        return jobseekerservices.createJobSeeker(jobSeeker);
+    // Create Job Seeker
+    @PostMapping("/create")
+    public JobSeeker createJobSeeker(
+            @RequestBody JobSeeker jobSeeker) {
+
+        return jobSeekerServices.createJobSeeker(jobSeeker);
     }
 
+    // Get all Job Seekers
     @GetMapping("/all")
-    public List<JobSeeker> getAllJobSeeker(){
-        return jobseekerservices.getAllJobSeekers();
+    public List<JobSeeker> getAllJobSeekers() {
+
+        return jobSeekerServices.getAllJobSeekers();
     }
 
-    @GetMapping("/JobSeeker/{id}")
-    public JobSeeker getJobSeekerById(@PathVariable int id){
-        return jobseekerservices.getJobSeekerById(id);
+    // Get Job Seeker by ID
+    @GetMapping("/{id}")
+    public JobSeeker getJobSeekerById(
+            @PathVariable Long id) {
+
+        return jobSeekerServices.getJobSeekerById(id);
     }
 
-    @PutMapping("update/{id}")
-    public JobSeeker updateJobSeeker(@RequestBody JobSeeker jobSeeker, @PathVariable int id){
-        return jobseekerservices.updateJobSeeker(jobSeeker,id)
+    // Update Job Seeker
+    @PutMapping("/update/{id}")
+    public JobSeeker updateJobSeeker(
+            @PathVariable Long id,
+            @RequestBody JobSeeker jobSeeker) {
+
+        return jobSeekerServices.updateJobSeeker(id, jobSeeker);
     }
 
+    // Delete Job Seeker
     @DeleteMapping("/delete/{id}")
-    public void deleteJobSeeker(@PathVariable int id) {
-        jobseekerservices.deleteJobSeekerById(id);
+    public void deleteJobSeeker(
+            @PathVariable Long id) {
+
+        jobSeekerServices.deleteJobSeeker(id);
     }
 }
